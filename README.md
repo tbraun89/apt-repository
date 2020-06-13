@@ -14,6 +14,8 @@ Don't forget to set all the environment variables, especially usernames and pass
 
 The aptly API will be exposed at `http://localhost:8080/api`, see the documentation for details: https://www.aptly.info/doc/api/
 
+If you run this in the wild you should put the API behind a reverse proxy enforcing a SSL connection or any data will be transferred in plain text. The repository itself does not need to be secured.
+
 ### Use the repository
 
 Add the signing public key of the repository
