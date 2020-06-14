@@ -5,6 +5,8 @@ export DOLLAR='$'
 echo "${APTLY_API_USER}:$(echo ${APTLY_API_PASSWORD} | openssl passwd -apr1 -stdin)" > /opt/aptly/api.htpasswd
 
 if [[ ! -f /opt/aptly/aptly.sec ]] || [[ ! -f /opt/aptly/aptly.pub ]]; then
+    cp -a /dev/urandom /dev/random
+
 cat << EOF > /tmp/apt_repository_gpg_batch
     %echo Generating a basic OpenPGP key
     Key-Type: RSA
